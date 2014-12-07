@@ -10,6 +10,6 @@ df2<-df[df$Date=="2007-02-01",]
 df2<-rbind(df2,df[df$Date=="2007-02-02",])
 df2$Global_active_power<-as.numeric(df2$Global_active_power)
 
-png(filename = "Rplot2.png",width = 480, height = 480, units = "px")
+png(filename = "plot2.png",width = 480, height = 480, units = "px")
 plot(as.POSIXct(paste(df2$Date, df2$Time, format="%d/%m/%Y %H:%M:%S")),df2$Global_active_power, type="l",ylab="Global Active Power (kilowatts)",xlab="")
 dev.off()

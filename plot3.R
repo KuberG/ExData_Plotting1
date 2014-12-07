@@ -9,7 +9,7 @@ df$Date<-as.Date(df$Date, "%d/%m/%Y")
 df2<-df[df$Date=="2007-02-01",]
 df2<-rbind(df2,df[df$Date=="2007-02-02",])
 
-png(filename = "Rplot3.png",width = 480, height = 480, units = "px")
+png(filename = "plot3.png",width = 480, height = 480, units = "px")
 
 with(df2, plot(as.POSIXct(paste(df2$Date, df2$Time, format="%d/%m/%Y %H:%M:%S")),df2$Sub_metering_1, type="l",ylab="Energy sub metering",xlab=""))
 with(df2, points(as.POSIXct(paste(df2$Date, df2$Time, format="%d/%m/%Y %H:%M:%S")),df2$Sub_metering_2, type="l", col="red"))

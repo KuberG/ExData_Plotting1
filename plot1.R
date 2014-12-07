@@ -9,6 +9,6 @@ df2<-df[df$Date=="2007-02-01",]
 df2<-rbind(df2,df[df$Date=="2007-02-02",])
 df2$Global_active_power<-as.numeric(df2$Global_active_power)
 
-png(filename = "Rplot1.png",width = 480, height = 480, units = "px")
+png(filename = "plot1.png",width = 480, height = 480, units = "px")
 hist(df2$Global_active_power, col="red",xlab="Global Active Power (kilowatts)",ylab="Frequency",main="Global Active Power")
 dev.off()

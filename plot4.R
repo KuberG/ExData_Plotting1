@@ -12,7 +12,7 @@ df2<-rbind(df2,df[df$Date=="2007-02-02",])
 df2$DateTime<-as.POSIXct(paste(df2$Date, df2$Time, format="%d/%m/%Y %H:%M:%S"))
 
 
-png(filename = "Rplot4.png",width = 480, height = 480, units = "px")
+png(filename = "plot4.png",width = 480, height = 480, units = "px")
 
 par(mfcol=c(2,2))
 
@@ -25,7 +25,7 @@ with(df2, points(df2$DateTime,df2$Sub_metering_2, type="l", col="red"))
 with(df2, points(df2$DateTime,df2$Sub_metering_3, type="l", col="blue"))
 
 legend("topright",col=c("black","red","blue"),
-       ,legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), lwd=c(2.5,2.5,2.5))
+       ,legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), lwd=c(2.5,2.5,2.5), bty="n")
 
 #graph 3
 with(df2, plot(df2$DateTime,df2$Voltage, type="l",xlab="datetime",ylab="Voltage"))

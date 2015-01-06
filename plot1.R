@@ -1,8 +1,8 @@
-#This file creates Plot1.png file
 #if(!file.exists("data")) dir.create("data")
 
 #fileURL<-"https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06pid.csv"
 #download.file(fileURL,destfile="idaho.csv")
+library("data.table")
 
 df<-fread("household_power_consumption.txt")
 df$Date<-as.Date(df$Date, "%d/%m/%Y") 

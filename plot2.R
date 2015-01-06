@@ -2,6 +2,7 @@
 
 #fileURL<-"https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06pid.csv"
 #download.file(fileURL,destfile="idaho.csv")
+library("data.table")
 df<-fread("household_power_consumption.txt", na.strings="?")
 
 df$Date<-as.Date(df$Date, "%d/%m/%Y")
